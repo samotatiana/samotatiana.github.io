@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="Author" content="Samoylenko"/>
+<!-- #BeginEditable "doctitle" -->
+<title></title>
+<!-- #EndEditable -->
+<link href="styles/style.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
+</head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+<div id="header">
+	<a href="index.html"></a>
+	<p id="name"><a href="index.html">М</a></p>
+	<p id="name"><a href="index.html">а</a></p>
+	<p id="name"><a href="index.html">т</a></p>
+	<p id="name"><a href="index.html">е</a></p>
+	<p id="name"><a href="index.html">м</a></p>
+	<p id="name"><a href="index.html">а</a></p>
+	<p id="name"><a href="index.html">т</a></p>
+	<p id="name"><a href="index.html">и</a></p>
+	<p id="name"><a href="index.html">к</a></p>
+	<p id="name"><a href="index.html">а</a></p>
+</div>
+		
+<!-- Begin Menu -->
+<ul class="menu">
+<li class="button1">игры<a href="games.html#item1"></a>
+	<ul>	
+	<li><div>Счет</div><a href="games.html#item1"></a></li>
+	<li><div>Сложение и вычитание</div><a href="games.html#item2"></a></li>
+	<li><div>Умножение</div><a href="games.html#item3"></a></li>
+	</ul>
+</li>
+<li class="button2">задачи<a href="tasks.html#item1"></a>
+	<ul>	
+	<li><div>Для дошкольников</div><a href="tasks.html#item1"></a></li>
+	<li><div>Для 1 класса</div><a href="tasks.html#item2"></a></li>
+	<li><div>Для 2 класса</div><a href="tasks.html#item3"></a></li>
+	</ul>
+</li>
+<li class="button3">узнай новое<a href="news.html#item1"></a>
+	<ul>	
+	<li><div>Как люди научились считать</div><a href="news.html#item1"></a></li>
+	<li><div>Сказка о Нуле</div><a href="news.html#item2"></a></li>
+	<li><div>Сказка о Точке</div><a href="news.html#item3"></a></li>
+	</ul>
+</li>
+<li class="button4">мультфильмы<a href="videos.html#item1"></a>
+	<ul>	
+	<li><div>Учимся считать</div><a href="videos.html#item1"></a></li>
+	<li><div>Сложение</div><a href="videos.html#item2"></a></li>
+	<li><div>Вычитание</div><a href="videos.html#item3"></a></li>
+	</ul>
+</li>
+
+</ul>
+<!-- End Menu -->
+
+
+<!-- #BeginEditable "content" -->
+<div id="content">
+<ul class="left_menu">
+	<li class="page4"><div>мультфильмы</div></li>
+	<li><div><a href="#item1">Учимся считать</a></div></li>
+	<li><div><a href="#item2">Удивительная стройка (Сложение)</a></div></li>
+	<li><div><a href="#item3">Удивительная стройка (Вычитание)</a></div></li>
+</ul>
+<div class="item" id="item1">
+<h2>Учимся считать</h2>
+<iframe src="https://www.youtube.com/embed/hFIL3Exk-WM" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="item" id="item2">
+<h2>Удивительная стройка - Сложение</h2>
+<iframe src="https://www.youtube.com/embed/umdqvJ-WbE0" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="item" id="item3">
+<h2>Удивительная стройка - Вычитание</h2>
+<iframe src="https://www.youtube.com/embed/N09uALLcl0A" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
+	
+<!-- #EndEditable -->
+		
+<!-- Begin Footer -->
+<div id="footer">
+Разработчик: Самойленко Олеся
+</div>
+<!-- End Footer -->
+</div>
+<!-- End Container -->
+</body>
+
+</html>
