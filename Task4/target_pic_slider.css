@@ -1,0 +1,81 @@
+﻿.bigpic {	/*ссылка с маленькой фотографии раскрывается на весь экран в виде затемненного прямоугольника, который является ссылкой обратно к просмотру страницы*/
+	width: 0;
+	height: 0;
+	position: fixed;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+    /* Поверх всех остальных элементов */
+	z-index: 9997;
+	text-align: center;
+	/* Полупрозрачный серый фон */
+	background: rgba(0,0,0,0.7);
+}
+ 
+.bigpic+#pic { /*непосредственный сосед ссылки на большую фотографию, это div с id ="pic",
+				 в котором лежит сама фото (она есть ссылкой на фото вперед) и стрелка-ссылка на фото назад*/
+	position: fixed;
+	overflow: hidden;
+	width: 0px;
+	margin-left:-100px;
+	margin-top: 100px;
+	z-index: 9998;
+	padding: 10px;
+	background: #ffffff;
+
+	/* тени */
+	-webkit-box-shadow: 0px 0px 15px #444;
+	-moz-box-shadow: 0px 0px 15px #444;
+	box-shadow: 0px 0px 15px #444;
+	/* свойство прозрачности изменяется не сразу, а за четверть секунды */   
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+	transition: opacity .25s ease-in-out;    
+}
+
+#pic .back  { /*стрелка назад, для нее не делаем отдельный обработчик на открытие, потому что она и так появляется,
+	 только когда размер div с id ="pic" больше 0, а это происходит только при открытии .bigpic с определенным ид*/
+	position: fixed;
+	display: run-in;	/*в ие с помощью этого правила стрелку назад рисует корректно, без него - нет*/
+	/*background: blue;*/ /*реально прямоугольник в 2 раза шире стрелки, можно отобразить цвет фона и посмотреть*/
+	/*margin-top:-250px;*/ /*если задать margin-top:-250px, то стрелка будет поднята от нижнего края фотографии вверх на 250*/
+	top: 250px;				/*если задаем top: 250px, то стрелка не прыгает при смене высоты фото*/
+	margin-left:-70px;		/*ширина прямоугольника, который дает стрелку 50px, отступаем на эти 50 и еще на 40 левее*/
+	border-width: 50px 25px;
+	border-style: solid;
+	border-color: transparent #686868 transparent transparent; 
+	box-shadow: 2px 0 0 -1px #000;
+	z-index: 9999;
+}
+
+@-moz-document url-prefix() {	/*в мозилле стрелку назад рисует от правого края, а не от левого (глюк мозиллы), поэтому для нее делаем -670*/
+#pic .back  {
+	margin-left:-670px;
+}}
+ 
+.bigpic:target { /*изначально большой серый фон свернут в точку (0,0), при нажатии ссылку разворачиваем на весь экран
+				отступы слева, справва, сверху и снизу равны нулю, а ширина и высота авто при position: fixed - получаем на весь экран, хоть это и ссылка*/
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+}
+
+.bigpic:target+#pic{			/*все фотографии свернуты в вертикальную полосу в нуле, при открытии серого фона, раскрываем див с фото, задаем отступ по центру и ширину*/
+   	margin-left: calc(50% - 310px);
+	width: 600px;
+}
+
+.bigpic:target+#pic a:nth-child(1):before { /*листать фото вперед можно нажатием на само фото, которое является ссылкой, 
+	и создаем псевдоэлемент :before для первой ссылки в div id="pic", которая как раз указывает на следующее фото, этот :before становится той же ссылкой*/
+	position: fixed;
+	content:"";
+	top: 250px;				/*если задаем top: 250px, то стрелка не прыгает при смене высоты фото*/
+	margin-left: 620px;
+	border-width: 50px 25px;
+	border-style: solid;
+	border-color: transparent transparent transparent #686868; 
+	box-shadow: -2px 0 0 -1px #000;
+
+}
+

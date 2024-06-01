@@ -1,0 +1,141 @@
+﻿body {
+	background-color: honeydew;
+		
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+
+}
+
+#header {
+	text-align: center;
+	padding: 1em;
+	font-family:"Comic Sans MS";
+	color: firebrick;
+
+}
+
+#menu {
+	text-align: center;
+	background-color: olivedrab;
+	padding: 1em;	
+	font-family:"Comic Sans MS";
+	
+}
+
+
+ul, h5 {
+	display: inline;
+	
+}
+
+ul li{
+	display: inline;
+	margin: 2px;
+	padding: 5px;
+	background-color: honeydew;
+
+}
+
+h5 {
+	margin-left: 30px;
+	margin-right: 10px;
+}
+
+/* for flex*/
+#mainflex {
+	display: flex;
+	flex-direction: row;
+	
+}
+
+#flex1 {
+	flex: 1;
+	margin-right: 20px;
+}
+
+#flex2 {
+	flex: 2;
+}
+
+/* for float, columns, table*/ 
+#main {
+	min-height:600px;
+}
+
+.column {
+    -webkit-column-width: 250px;
+    -moz-column-width: 250px;
+    column-width: 250px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-rule: 1px solid #ccc;
+    -moz-column-rule: 1px solid #ccc;
+    column-rule: 1px solid #ccc;
+   }
+
+#float1, #float2, #float3 {
+	width: 33%;
+	display: inline;
+	margin-left: 0.3%;
+}
+#float1 {
+	float: left;
+}
+
+#float2 {
+	float: left;
+}
+
+
+#float3 {
+	float: right;
+}
+
+td {
+	vertical-align:top;
+}
+
+
+#footer {
+	text-align: right;
+	padding: 1em;
+	background-color: olivedrab;
+	clear: both;
+}
+
+#footer ul li a{
+	font-size:small;
+	font-weight: bold;
+}
+
+a {
+	text-decoration:none;
+	color: firebrick;
+	font-style:italic;	
+}
+
+a.selected {
+	 text-decoration:underline;
+	 font-size: larger;
+}
+
+
+a[href^="mailto"] {
+	color: black;
+}
+
+img{
+	width: 200px;
+	margin: 10px;
+	float:left;
+}
+
+
+

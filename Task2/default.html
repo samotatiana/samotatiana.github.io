@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="Author" content="Samoylenko"/>
+<title>Обвал</title>
+<style> 
+
+#palitra {
+	position: fixed; /*можно fixed или absolute, чтобы относительно него можно было задать left и top для фигур и букв, а смещение всей композиции задавать здесь*/
+	left: 10%;
+	top: 200px;
+}
+
+#circle {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	opacity: .6;
+	margin-left: 200px;
+	margin-top: 150px;
+	box-shadow: 60px -80px 80px rgba(100,100,100,.2) inset;
+}
+#circle:nth-of-type(1)	{background-color: lime;		left: -50px; top: 50px;}
+#circle:nth-of-type(2) 	{background-color: deeppink; 	left:   0px; top:  0px;}
+#circle:nth-of-type(3)  {background-color: aqua; 		left:  70px; top: 50px;}
+	
+
+
+#letter {
+	position: absolute;
+	margin: 0; 
+	font-size: 100px;
+	font-weight: bold;
+	margin-left: 250px; /*смещаемся на середину композиции (верхний левый угол 4-й буквы), чтобы потом понятнее было, куда смещать остальные буквы*/
+}
+
+#letter:nth-of-type(1) {left:-230px; top: 300px;}
+#letter:nth-of-type(2) {left:-200px; top: 160px;}
+#letter:nth-of-type(3) {left:-130px; top: 50px;}
+#letter:nth-of-type(4) {left:   0px; top: 0px;}
+#letter:nth-of-type(5) {left: 150px; top: 50px;}
+#letter:nth-of-type(6) {left: 240px; top: 180px;}
+#letter:nth-of-type(7) {left: 300px; top: 300px;}
+
+
+#links {
+	background-color: silver;
+	font-size: medium;
+	width: calc(100% - 40px);
+	padding: 20px;
+	font-style: italic;
+}
+
+a {
+	margin: 20px;
+	text-decoration: none;
+	font-style: italic;
+	color: black;
+}
+
+a.selected {
+	 text-decoration:underline;
+	 font-size: larger;
+}
+
+</style>
+  
+</head>
+
+
+
+<body>
+<div id="palitra">
+	<div id="circle"></div>
+	<div id="circle"></div>
+	<div id="circle"></div>
+
+ 
+	<p id="letter">П</p>
+	<p id="letter">А</p>
+	<p id="letter">Л</p>
+	<p id="letter">И</p>
+	<p id="letter">Т</p>
+	<p id="letter">Р</p>
+	<p id="letter">А</p>
+</div>
+
+<div id="links">
+<a href="../Task1/default.html">1. Тени</a>
+<a class="selected" href="../Task2/default.html">2. Обвал</a> 
+<a href="../Task3/default.html">3. Колонки</a>
+<a href="../Task4/default.html">4. Псевдокласс Target</a>
+<a href="../Task5/default.html">5. Эффект</a>
+<a href="../Task6/default.html">6. Музей математики</a>
+<a href="../Task7/default.html">7. Бронксский зоопарк</a>
+</div>
+
+</body>
+
+</html>

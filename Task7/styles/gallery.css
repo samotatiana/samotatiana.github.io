@@ -1,0 +1,129 @@
+﻿input[name=raz] {display: none;}
+
+/* стиль блока */
+.gallery {
+	position: relative; 
+	width: 600px; 
+	padding-top: 450px; 
+	margin: 4px 20px 20px;/*3em 2.3em 4.5em; */	
+	background: no-repeat 50% 50%; 
+	background-size: 100% 100%;
+	border: 2px solid #B4B300;
+} 						
+
+/* стиль миниатюры */
+.gallery label {
+	display: inline-block; 
+	width: 120px;/*20%;*/ 
+	height: 90px/*4em*/;
+	margin-bottom: -96px/*-4.5em*/; 
+	background: no-repeat 50% 50%; 
+	background-size: 99% 97%; 
+	opacity: .5;
+	cursor: pointer;
+} 
+
+/* стиль при наведении на миниатюру */
+.gallery label:hover {
+	opacity: .85;
+} 
+
+/* стиль активного пункта */
+#raz1:checked ~ .gallery [for="raz1"], 
+#raz2:checked ~ .gallery [for="raz2"],
+#raz3:checked ~ .gallery [for="raz3"],
+#raz4:checked ~ .gallery [for="raz4"],
+#raz5:checked ~ .gallery [for="raz5"],
+#raz6:checked ~ .gallery [for="raz6"],
+#raz7:checked ~ .gallery [for="raz7"],
+#raz8:checked ~ .gallery [for="raz8"], 
+#raz9:checked ~ .gallery [for="raz9"],
+#raz10:checked ~ .gallery [for="raz10"],
+#raz11:checked ~ .gallery [for="raz11"],
+#raz12:checked ~ .gallery [for="raz12"] {
+	opacity: 1; 
+	cursor: default; 
+	/*background-size: 70% 70%;*/
+}
+
+/*фото загружаются как фон*/
+#raz1:checked ~ .gallery, .gallery [for="raz1"] {background-image: url('../images/zoo/DSCN8092.JPG');}
+#raz2:checked ~ .gallery, .gallery [for="raz2"] {background-image: url('../images/zoo/DSCN8093.JPG');}
+#raz3:checked ~ .gallery, .gallery [for="raz3"] {background-image: url('../images/zoo/DSCN8107.JPG');}
+#raz4:checked ~ .gallery, .gallery [for="raz4"] {background-image: url('../images/zoo/DSCN8137.JPG');}
+#raz5:checked ~ .gallery, .gallery [for="raz5"] {background-image: url('../images/zoo/DSCN8143.JPG');}
+#raz6:checked ~ .gallery, .gallery [for="raz6"] {background-image: url('../images/zoo/DSCN8151.JPG');}
+#raz7:checked ~ .gallery, .gallery [for="raz7"] {background-image: url('../images/zoo/DSCN8155.JPG');}
+#raz8:checked ~ .gallery, .gallery [for="raz8"] {background-image: url('../images/zoo/DSCN8159.JPG');}
+#raz9:checked ~ .gallery, .gallery [for="raz9"] {background-image: url('../images/zoo/DSCN8160.JPG');}
+#raz10:checked ~ .gallery, .gallery [for="raz10"] {background-image: url('../images/zoo/DSCN8161.JPG');}
+#raz11:checked ~ .gallery, .gallery [for="raz11"] {background-image: url('../images/zoo/DSCN8163.JPG');}
+#raz12:checked ~ .gallery, .gallery [for="raz12"] {background-image: url('../images/zoo/DSCN8164.JPG');}
+
+
+/*кнопки-стрелки*/
+.gallery label:before {position: absolute; top: 45%; border-width: 2em 1em; border-style: solid;}
+#raz1:checked ~ .gallery [for="raz2"]:before, 
+#raz2:checked ~ .gallery [for="raz3"]:before,
+#raz3:checked ~ .gallery [for="raz4"]:before,
+#raz4:checked ~ .gallery [for="raz5"]:before,
+#raz5:checked ~ .gallery [for="raz6"]:before,
+#raz6:checked ~ .gallery [for="raz7"]:before,
+#raz7:checked ~ .gallery [for="raz8"]:before,
+#raz8:checked ~ .gallery [for="raz9"]:before, 
+#raz9:checked ~ .gallery [for="raz10"]:before,
+#raz10:checked ~ .gallery [for="raz11"]:before,
+#raz11:checked ~ .gallery [for="raz12"]:before,
+#raz12:checked ~ .gallery [for="raz1"]:before 
+{content: ""; right: -2.5em; border-color: transparent transparent transparent #686868; box-shadow: -2px 0 0 -1px #000;}
+#raz1:checked ~ .gallery [for="raz12"]:before,
+#raz2:checked ~ .gallery [for="raz1"]:before,
+#raz3:checked ~ .gallery [for="raz2"]:before,
+#raz4:checked ~ .gallery [for="raz3"]:before,
+#raz5:checked ~ .gallery [for="raz4"]:before,
+#raz6:checked ~ .gallery [for="raz5"]:before,
+#raz7:checked ~ .gallery [for="raz6"]:before,
+#raz8:checked ~ .gallery [for="raz7"]:before,
+#raz9:checked ~ .gallery [for="raz8"]:before,
+#raz10:checked ~ .gallery [for="raz9"]:before,
+#raz11:checked ~ .gallery [for="raz10"]:before,
+#raz12:checked ~ .gallery [for="raz11"]:before 
+{content: ""; left: -2.5em; border-color: transparent #686868 transparent transparent; box-shadow: 2px 0 0 -1px #000;}
+
+/* определяет наличие миниатюры для всех n от 0 до последнего возможного*/
+/*если всего фото к штук, то мы отображаем label (к-1),к,1,2,...,(к-1),к*/
+/*всего у нас (к+2) элементов, при этом n принимает значения от 0 до (к+1)*/
+/*тогда для к = 1 нам нужно оставить только первых 5 label (первое фото будет по центру)*/
+#raz1:checked ~ .gallery label:nth-of-type(n+6), /*с 6 по последний label убираем, первые 5 видно*/
+#raz2:checked ~ .gallery label:nth-of-type(n+7), /*для 2-го фото оставляем 2,3,4,5,6 label,*/
+#raz2:checked ~ .gallery label:nth-of-type(-n+1),/*а убираем с 7 до последнего и первый*/
+#raz3:checked ~ .gallery label:nth-of-type(n+8), /*для 2-го фото оставляем 3,4,5,6,7 label,*/
+#raz3:checked ~ .gallery label:nth-of-type(-n+2),/*а убираем с 8 до последнего и первые 2*/
+#raz4:checked ~ .gallery label:nth-of-type(n+9), /*и т.д.*/
+#raz4:checked ~ .gallery label:nth-of-type(-n+3),
+#raz5:checked ~ .gallery label:nth-of-type(n+10),
+#raz5:checked ~ .gallery label:nth-of-type(-n+4),
+#raz6:checked ~ .gallery label:nth-of-type(n+11),
+#raz6:checked ~ .gallery label:nth-of-type(-n+5),
+#raz7:checked ~ .gallery label:nth-of-type(n+12),
+#raz7:checked ~ .gallery label:nth-of-type(-n+6),
+#raz8:checked ~ .gallery label:nth-of-type(n+13),
+#raz8:checked ~ .gallery label:nth-of-type(-n+7),
+#raz9:checked ~ .gallery label:nth-of-type(n+14),
+#raz9:checked ~ .gallery label:nth-of-type(-n+8),
+#raz10:checked ~ .gallery label:nth-of-type(n+15),
+#raz10:checked ~ .gallery label:nth-of-type(-n+9),
+#raz11:checked ~ .gallery label:nth-of-type(n+16),
+#raz11:checked ~ .gallery label:nth-of-type(-n+10),
+#raz12:checked ~ .gallery label:nth-of-type(n+17),
+#raz12:checked ~ .gallery label:nth-of-type(-n+11) 
+{width: 0%;}
+
+/*#raz1:checked ~ .gallery [for="raz1"]:after, /* абзац создаёт названия к изображениям, которые можно и не использовать */
+/*#raz2:checked ~ .gallery [for="raz2"]:after,
+#raz3:checked ~ .gallery [for="raz3"]:after,
+#raz4:checked ~ .gallery [for="raz4"]:after,
+#raz5:checked ~ .gallery [for="raz5"]:after,
+#raz6:checked ~ .gallery [for="raz6"]:after,
+#raz7:checked ~ .gallery [for="raz7"]:after {content: attr(title); position: absolute; top: -2em; left: 0; width: 100%; text-align: center; font-weight: 900;}*/
+
